@@ -3,7 +3,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev node ./server",
     "dev": "cross-env NODE_ENV=dev supervisor ./server",
-    "onlineDev": "cross-env NODE_ENV=production forever start ./server",
+    "onlineDev": "cross-env NODE_ENV=production forever start ./server ",
     "build": "webpack"
   },
   "dependencies": {
