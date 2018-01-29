@@ -12,19 +12,19 @@ function registerModel(app, model) {
 }
 
 export const routes = (
-  <div>
-    <Route path="/" component={App} />
-    <Route path="/*" component={App} />
-  </div>
+    <div>
+        <Route path="/" component={App} />
+        <Route path="/*" component={App} />
+    </div>
 );
 
 export default function({ history, app }) {
-  return (
-    <Router history={history}>
-        <Route path="/" component={App} />
-        <Route path="/*" component={App} />
-    </Router>
-  );
+    return (
+        <Router history={history}>
+            <Route path="/" component={App} />
+            <Route path="/*" component={App} />
+        </Router>
+    );
 }
 
 

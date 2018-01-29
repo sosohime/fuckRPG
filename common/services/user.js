@@ -10,7 +10,9 @@ import request from '../utils/request';
  *  密码 password*: string, MD5
  */
 export function login(params) {
-  return request('/dong-manager/user/login', {body: params})
+  return request('/dong-manager/user/login', {
+    body: params
+  })
 }
 
 export function fetchList() {

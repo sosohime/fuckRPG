@@ -10,9 +10,9 @@ export default function(req, res) {
     location: req.url,
   }, (err, redirectLocation, renderProps) => {
     if (err) {
-      res.status(500).end(`Internal Server Error ${err}`);
+        res.status(500).end(`Internal Server Error ${err}`);
     } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+        res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
       // switch (renderProps.location.pathname) {
       //   case '/':
@@ -37,17 +37,17 @@ export default function(req, res) {
       // }
       fetchList()
             .then(({ err, data }) => {
-              if (err) {
-                res.status(500).end(`Uncaught error: ${err}`);
-                return;
-              }
-              const initialState = { user: data };
-              const app = createApp({
-                history: createMemoryHistory(),
-                initialState,
-              }, /* isServer */true);
-              const html = renderToString(app.start()({ renderProps }));
-              res.end(renderFullPage(html, initialState));
+                if (err) {
+                    res.status(500).end(`Uncaught error: ${err}`);
+                    return;
+                }
+                const initialState = { user: data };
+                const app = createApp({
+                    history: createMemoryHistory(),
+                    initialState,
+                }, /* isServer */true);
+                const html = renderToString(app.start()({ renderProps }));
+                res.end(renderFullPage(html, initialState));
             });
     } else {
       res.status(404).send('Not found')

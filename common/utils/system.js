@@ -3,10 +3,10 @@ const accessToken = {
     now: null
 }
 
-export function getAccessToken () {
+export function getAccessToken() {
     return global.accessToken;
 }
 
-export function setAccessToken (token) {
+export function setAccessToken(token) {
     global.accessToken = token;
 }

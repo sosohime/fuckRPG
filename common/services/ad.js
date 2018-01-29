@@ -13,8 +13,10 @@ import request from '../utils/request';
  *  广告标题 title*: string
  *  
  */
-export function add(params){
-    return request('/dong-manager/ad/add', {body: params});
+export function add(params) {
+    return request('/dong-manager/ad/add', {
+        body: params
+    });
 }
 
 /** 
@@ -26,8 +28,10 @@ export function add(params){
  *  广告ID id*: string
  *  
  */
-export function del(params){
-    return request('/dong-manager/ad/del', {body: params});
+export function del(params) {
+    return request('/dong-manager/ad/del', {
+        body: params
+    });
 }
 
 /** 
@@ -36,8 +40,10 @@ export function del(params){
  *  广告ID id*: string
  *  
  */
-export function getById(params){
-    return request('/dong-manager/ad/get-by-id', {body: params});
+export function getById(params) {
+    return request('/dong-manager/ad/get-by-id', {
+        body: params
+    });
 }
 
 /** 
@@ -45,7 +51,7 @@ export function getById(params){
  * @params
  *  
  */
-export function getList(){
+export function getList() {
     return request('/dong-manager/ad/get-list');
 }
 
@@ -56,8 +62,10 @@ export function getList(){
  *  分页大小 size*: int 1~20
  * 
  */
-export function getListByPage(params){
-    return request('/dong-manager/ad/get-list-by-page', {body: params});
+export function getListByPage(params) {
+    return request('/dong-manager/ad/get-list-by-page', {
+        body: params
+    });
 }
 
 /** 
@@ -71,7 +79,8 @@ export function getListByPage(params){
  *  广告标题 title*: string
  * 
  */
-export function modify(params){
-    return request('/dong-manager/ad/modify', {body: params});
+export function modify(params) {
+    return request('/dong-manager/ad/modify', {
+        body: params
+    });
 }
-

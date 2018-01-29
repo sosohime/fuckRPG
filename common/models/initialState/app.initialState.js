@@ -3,6 +3,7 @@ const initialState = {
     dongshifu: [],
     accessToken: null,
     showLoginModal: false,
+    bookUpdateDate: '',
 }
 
 export default initialState;

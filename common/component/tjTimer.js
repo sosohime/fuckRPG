@@ -22,23 +22,33 @@ class TJTimer extends React.Component {
         }
     }
 
+    componentDidMount () {
+        
+    }
+
     componentDidMount(next) {
+        this.props.dispatch({
+            type: 'app/loadBookUpdate'
+        })
         //控制数字的滚动
         if(!this.timer) {
             this.timer = setInterval(
                 () => {
-                    let now = new Date();
-                    let leee = now.getTime() - this.state.taijianDate.getTime();
+                    let bookUpdateDate = this.props.bookUpdateDate
+                    if(typeof bookUpdateDate === 'object'){
+                        let now = new Date();
+                        let leee = now.getTime() - bookUpdateDate.getTime();
 
-                    this.setState({
-                        gezi: {
-                            d: parseInt(leee / 1000 / 60 / 60 / 24),
-                            h: parseInt(leee / 1000 / 60 / 60 % 24),
-                            m: parseInt(leee / 1000 / 60 % 60 ),
-                            s: parseInt(leee / 1000 % 60 ),
-                            ss: parseInt(leee % 1000)
-                        }
-                    });
+                        this.setState({
+                            gezi: {
+                                d: parseInt(leee / 1000 / 60 / 60 / 24),
+                                h: parseInt(leee / 1000 / 60 / 60 % 24),
+                                m: parseInt(leee / 1000 / 60 % 60 ),
+                                s: parseInt(leee / 1000 % 60 ),
+                                ss: parseInt(leee % 1000)
+                            }
+                        });
+                    }
                 },
                 50
             );
