@@ -18,3 +18,7 @@ export function login(params) {
 export function fetchList() {
   return request('/api/users');
 }
+
+export function invitation() {
+  return request('/dong-manager/user/link');
+}

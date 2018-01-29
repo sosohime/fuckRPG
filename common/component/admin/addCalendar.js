@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Form, Input, Icon } from 'antd';
+import { Modal, Button, Form, Input, Icon, message } from 'antd';
 
 import * as calendarApi from '../../services/calendar';
 

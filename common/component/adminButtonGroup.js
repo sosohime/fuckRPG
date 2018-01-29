@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 import AddCalendar from './admin/addCalendar';
 import UpdateTJTime from './admin/updateTJTime';
+import InvitationUser from './admin/invitation';
 
 const buttonGroup = (adminProps) => {
 
@@ -18,6 +19,7 @@ const buttonGroup = (adminProps) => {
             <AddCalendar {...addProps}></AddCalendar>
             <Button>广告管理(没做)</Button>
             <UpdateTJTime {...updateTJTimeProps}></UpdateTJTime>
+            <InvitationUser></InvitationUser>
         </div>
     )
 }
