@@ -18,6 +18,7 @@ class InvitationUser extends React.Component{
     showModal() {
         this.setState({
             modalVisible: true,
+            invitationHtml: ''
         })
     }
 
