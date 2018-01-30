@@ -28,3 +28,6 @@
   + 增删改
 + webpck配置文件分离成dev和product
 + 服务端渲染首屏
++ 根据入口二级域名区分日志名字
+  + 董师傅的妖孽人生: dong.yulaiz.com
+  + 教主的妖孽人生: 6s.yulaiz.com
