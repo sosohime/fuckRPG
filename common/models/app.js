@@ -38,7 +38,6 @@ export default {
         },
         getBookUpdateSuccess(state, { payload }) {
             let bookUpdateDate = new Date(payload.data);
-            console.log(bookUpdateDate)
             return { ...state, bookUpdateDate }
         },
         loginError(state, { payload }) {

@@ -15,10 +15,15 @@ export function login(params) {
   })
 }
 
-export function fetchList() {
-  return request('/api/users');
-}
-
+/**
+ * 获取邀请
+ * @params
+ * 
+ */
 export function invitation() {
   return request('/dong-manager/user/link');
+}
+
+export function fetchList() {
+  return request('/api/users');
 }

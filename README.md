@@ -4,6 +4,10 @@
   
   直接链接：<http://www.yulaiz.com/dong/>
 
+### v0.2.2alpha版本说明
+
+- 新增邀请注册功能
+
 ### v0.21alpha版本说明
 
 - 新增日历的编辑功能

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Modal, message } from 'antd';
 import { invitation } from '../../services/user';
+import { getUrlFromString } from '../../utils/tools'
 
 class InvitationUser extends React.Component{
     constructor(props) {
@@ -45,9 +46,11 @@ class InvitationUser extends React.Component{
         })
     }
 
+    
+
     render() {
-        // let invitationHtml = this.props.invitationHtml;
-        let invitationHtml = '<div style="color: red;">success</div>'
+        // let invitationHtml = getUrlFromString(this.state.invitationHtml);
+        let invitationHtml = this.state.invitationHtml;
         return (
             <div>
                 <Button 

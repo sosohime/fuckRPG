@@ -44,7 +44,7 @@ function app ({ location, dispatch, app }) {
 
     return (
         <div className={styles.body}>
-            <h1 id="top-title" style={{ padding: '20px 0 0 20px' }}>著名作家董师傅之新工作日志 v0.21alpha</h1>
+            <h1 id="top-title" style={{ padding: '20px 0 0 20px' }}>著名作家董师傅之新工作日志 v0.22alpha</h1>
             <TJTimer {...tjTimerProps}></TJTimer>
             <div>
                 {
