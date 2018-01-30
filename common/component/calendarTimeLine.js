@@ -1,6 +1,7 @@
 import React from 'react';
 import { Popover, Timeline, Button, Modal, Form, Input, message } from 'antd';
 import * as calendarApi from '../services/calendar';
+import styles from './Calendar.css';
 
 const FormItem = Form.Item;
 const TextArea = Input.TextArea;
@@ -187,17 +188,22 @@ class CalendarTimeLine extends React.Component {
                                 第 <em style={{ color: '#108ee9' }}>{item.id}</em> 天
                             </label>
                             <p style={{ padding: '0 0 0 20px' }}>- {item.title}</p>
-                            <Popover placement="right" content={item.description || item.work} title={`第 ${item.id} 天`} trigger="hover">
+                            <Popover 
+                                placement="right" 
+                                content={<div dangerouslySetInnerHTML={{__html: item.description}}></div>}
+                                title={`第 ${item.id} 天`} 
+                                trigger="hover"
+                                >
                                 <p style={{textAlign: 'right'}}>
                                     <Button>> 详情</Button>
-                                    { admin ?
-                                        <div>
-                                            <Button onClick={() => this.handleDelete(item.id)}>删除</Button>
-                                            <Button onClick={() => this.showEditModal(item)}>编辑</Button>
-                                        </div> : null
-                                    }
                                 </p>
                             </Popover>
+                            { admin ?
+                                <div className={styles.timelineAdmin}>
+                                    <Button onClick={() => this.handleDelete(item.id)}>删除</Button>
+                                    <Button onClick={() => this.showEditModal(item)}>编辑</Button>
+                                </div> : null
+                            }
                         </Timeline.Item>
                         )
                 }

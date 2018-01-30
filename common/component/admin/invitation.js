@@ -1,7 +1,9 @@
 import React from 'react';
-import { Button, Modal, message } from 'antd';
+import { Button, Modal, message, Dropdown, Input } from 'antd';
 import { invitation } from '../../services/user';
-import { getUrlFromString } from '../../utils/tools'
+import { getUrlFromString } from '../../utils/tools';
+
+const Search = Input.Search;
 
 class InvitationUser extends React.Component{
     constructor(props) {
@@ -14,14 +16,21 @@ class InvitationUser extends React.Component{
     }
 
     showModal() {
+        this.setState({
+            modalVisible: true,
+        })
+    }
+
+    invitationNewUser(user = '') {
         if(this.state.loading)return;
         this.setState({
             loading: true
         })
-        invitation()
+        invitation({remark: user})
             .then((res) => {
                 let { data } = res;
                 if( data.result == 'success' ){
+                    message.success('生成邀请链接成功！')
                     this.setState({
                         modalVisible: true,
                         invitationHtml: data.data
@@ -65,6 +74,12 @@ class InvitationUser extends React.Component{
                     onCancel={this.hideModal.bind(this)}
                     footer={null}
                     >
+                    <Search 
+                        placeholder="输入邀请的人的名字（可以为空）" 
+                        enterButton="获取" 
+                        size="default"
+                        onSearch={value => { this.invitationNewUser(value) } }
+                    />
                     <div dangerouslySetInnerHTML={{__html: invitationHtml}}></div>
                 </Modal>
             </div>

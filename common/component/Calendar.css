@@ -1,0 +1,20 @@
+.bbb{
+    padding: 20px;
+    color: red;
+}
+.adminBtnGroup{
+    padding: 20px 0 0 30px;
+}
+.adminBtnGroup > div {
+    display: inline-block;
+    margin-right: 10px;
+}
+.adminBtnGroup > button {
+    margin-right: 10px;
+}
+.timelineAdmin{
+    text-align: right;
+}
+.timelineAdmin > button {
+    margin-left: 10px;
+}

@@ -18,10 +18,12 @@ export function login(params) {
 /**
  * 获取邀请
  * @params
- * 
+ *  被邀请人备注 remark: string
  */
-export function invitation() {
-  return request('/dong-manager/user/link');
+export function invitation(params) {
+  return request('/dong-manager/user/link', {
+    body: params
+  });
 }
 
 export function fetchList() {
