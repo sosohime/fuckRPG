@@ -4,6 +4,8 @@
   
   直接链接：<http://dong.yulaiz.com/>
 
+  后台GitHub地址：<https://github.com/YuLaiZ/dong-manager/>
+
 ### v0.2.2alpha版本说明
 
 - 新增邀请注册功能
