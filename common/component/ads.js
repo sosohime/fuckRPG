@@ -1,6 +1,7 @@
 import React from 'react';
 import { notification, Icon, Button, Form, Input, Modal, message } from 'antd';
 import * as adsApi from '../services/ad';
+import styles from '../routes/App.css'
 
 const FormItem = Form.Item;
 const TextArea = Input.TextArea;
@@ -49,7 +50,7 @@ class Ads extends React.Component {
                             <div>
                                 <span dangerouslySetInnerHTML={{__html: description}}></span>
                                 { this.props.accessToken ? 
-                                    <div>
+                                    <div className={styles.adsBtnBox}>
                                         <Button onClick={()=>{this.delAd(id)}}>删除</Button>
                                         <Button onClick={()=>{this.showEditModal(adsList[i])}}>修改</Button>
                                     </div> : null
@@ -197,7 +198,7 @@ class Ads extends React.Component {
         e.preventDefault();
         if(this.state.addLoading)return;
         this.props.form.validateFields((err, values) => {
-            if (!err) {
+            if (Object.keys(err).length <= 1) {
                 this.setState({
                     addLoading: true
                 })

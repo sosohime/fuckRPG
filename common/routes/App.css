@@ -7,3 +7,9 @@
 #test{
   background: #000;
 }
+.adsBtnBox{
+  padding-top: 10px;
+}
+.adsBtnBox > button {
+  margin-right: 10px;
+}
