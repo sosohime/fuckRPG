@@ -4,8 +4,6 @@ import {
     getAccessToken
 } from './system';
 
-const host = process.env.NODE_ENV === 'dev' ? 'http://localhost:2234/' : 'http://www.yulaiz.com'
-
 const fetchDefaultOptions = {
     method: 'POST',
     headers: {
@@ -37,8 +35,8 @@ export default function request(url, options) {
     options = Object.assign(fetchDefaultOptions, options)
     options.body = options.body || {};
     options.body = JSON.stringify(options.body)
-
-    return fetch(`${host}${url}`, options)
+    
+    return fetch(`${location.origin}${url}`, options)
         .then(checkStatus)
         .then(parseJSON)
         .then((data) => ({

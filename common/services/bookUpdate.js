@@ -9,7 +9,7 @@ import request from '../utils/request';
  *  
  */
 export function get() {
-	return request('/dong-manager/book-update/get');
+	return request('/api/book-update/get');
 }
 
 /** 
@@ -21,7 +21,7 @@ export function get() {
  *  更新时间 updateTime*: string yyyy-MM-dd
  */
 export function update(params) {
-	return request('/dong-manager/book-update/update', {
+	return request('/api/book-update/update', {
 		body: params
 	})
 }

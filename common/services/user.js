@@ -10,7 +10,7 @@ import request from '../utils/request';
  *  密码 password*: string, MD5
  */
 export function login(params) {
-  return request('/dong-manager/user/login', {
+  return request('/api/user/login', {
     body: params
   })
 }
@@ -21,7 +21,7 @@ export function login(params) {
  *  被邀请人备注 remark: string
  */
 export function invitation(params) {
-  return request('/dong-manager/user/link', {
+  return request('/api/user/link', {
     body: params
   });
 }

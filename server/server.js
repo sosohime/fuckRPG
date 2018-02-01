@@ -29,8 +29,11 @@ if (process.env.NODE_ENV !== 'production') {
 // proxy
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/dong-manager', proxy({
-  target: 'http://dong.yulaiz.com',
+app.use('/api', proxy({
+  target: 'http://dong-manager.yulaiz.com',
+  pathRewrite: {
+    '^/api':'' //remove /api
+  },
   changeOrigin: true
 }))
 

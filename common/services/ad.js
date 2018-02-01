@@ -14,7 +14,7 @@ import request from '../utils/request';
  *  
  */
 export function add(params) {
-    return request('/dong-manager/ad/add', {
+    return request('/api/ad/add', {
         body: params
     });
 }
@@ -29,7 +29,7 @@ export function add(params) {
  *  
  */
 export function del(params) {
-    return request('/dong-manager/ad/del', {
+    return request('/api/ad/del', {
         body: params
     });
 }
@@ -41,7 +41,7 @@ export function del(params) {
  *  
  */
 export function getById(params) {
-    return request('/dong-manager/ad/get-by-id', {
+    return request('/api/ad/get-by-id', {
         body: params
     });
 }
@@ -52,7 +52,7 @@ export function getById(params) {
  *  
  */
 export function getList() {
-    return request('/dong-manager/ad/get-list');
+    return request('/api/ad/get-list');
 }
 
 /** 
@@ -63,7 +63,7 @@ export function getList() {
  * 
  */
 export function getListByPage(params) {
-    return request('/dong-manager/ad/get-list-by-page', {
+    return request('/api/ad/get-list-by-page', {
         body: params
     });
 }
@@ -80,7 +80,7 @@ export function getListByPage(params) {
  * 
  */
 export function modify(params) {
-    return request('/dong-manager/ad/modify', {
+    return request('/api/ad/modify', {
         body: params
     });
 }

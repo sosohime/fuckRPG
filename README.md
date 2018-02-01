@@ -6,6 +6,10 @@
 
   后台GitHub地址：<https://github.com/YuLaiZ/dong-manager/>
 
+### v0.2.3alpha版本说明
+
+- 新增广告增删改功能
+
 ### v0.2.2alpha版本说明
 
 - 新增邀请注册功能
@@ -26,8 +30,6 @@
 ### todo
 + 日历
   + 查询分页
-+ 广告
-  + 增删改
 + webpck配置文件分离成dev和product
 + 服务端渲染首屏
 + 根据入口二级域名区分日志名字

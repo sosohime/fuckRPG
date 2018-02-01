@@ -9,7 +9,7 @@ class TJTimer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            taijianDate: new Date('2017-08-06 18:07:00'),
+            taijianDate: new Date('2017/08/06 18:07:00'),
             // now: new Date(),
             // leee: new Date().getTime() - new Date('2017-08-06 18:07:00').getTime(),
             gezi:{

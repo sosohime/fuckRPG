@@ -37,11 +37,16 @@ export default {
             }
         },
         getBookUpdateSuccess(state, { payload }) {
-            let bookUpdateDate = new Date(payload.data);
+            let bookUpdateDate = new Date(payload.data.replace(/-/g, '/'));
             return { ...state, bookUpdateDate }
         },
         loginError(state, { payload }) {
             return payload
+        },
+        showAllAds(state, {payload}) {
+            console.log(state)
+            state.loadAds += 1
+            return { ...state }
         }
     },
     effects: {

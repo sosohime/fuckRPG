@@ -5,6 +5,7 @@ import LoginModal from '../component/loginModal';
 import AdminButtonGroup from '../component/adminButtonGroup';
 import TJTimer from '../component/tjTimer';
 import Calendar from '../component/calendar';
+import Ads from '../component/ads';
 
 import styles from './App.css';
 
@@ -41,11 +42,16 @@ function app ({ location, dispatch, app }) {
         dispatch,
         ...app
     }
+    const adsProps = {
+        dispatch,
+        ...app
+    }
 
     return (
         <div className={styles.body}>
             <h1 id="top-title" style={{ padding: '20px 0 0 20px' }}>著名作家董师傅之新工作日志 v0.22alpha</h1>
             <TJTimer {...tjTimerProps}></TJTimer>
+            <Ads {...adsProps}></Ads>
             <div>
                 {
                     app.accessToken ?

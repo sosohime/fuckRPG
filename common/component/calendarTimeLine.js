@@ -84,7 +84,6 @@ class CalendarTimeLine extends React.Component {
                 this.setState({
                     editLoading: true
                 })
-                console.log(values)
                 calendarApi.modify(values)
                     .then((res) => {
                         let { data } = res;

@@ -16,7 +16,7 @@ import request from '../utils/request';
  *  
  */
 export function add(params) {
-    return request('/dong-manager/calendar/add', {
+    return request('/api/calendar/add', {
         body: params
     });
 }
@@ -31,7 +31,7 @@ export function add(params) {
  *  
  */
 export function del(params) {
-    return request('/dong-manager/calendar/del', {
+    return request('/api/calendar/del', {
         body: params
     });
 }
@@ -43,7 +43,7 @@ export function del(params) {
  *  
  */
 export function getById(params) {
-    return request('/dong-manager/calendar/get-by-id', {
+    return request('/api/calendar/get-by-id', {
         body: params
     });
 }
@@ -54,7 +54,7 @@ export function getById(params) {
  *  
  */
 export function getList() {
-    return request('/dong-manager/calendar/get-list');
+    return request('/api/calendar/get-list');
 }
 
 /** 
@@ -65,7 +65,7 @@ export function getList() {
  * 
  */
 export function getListByPage(params) {
-    return request('/dong-manager/calendar/get-list-by-page', {
+    return request('/api/calendar/get-list-by-page', {
         body: params
     });
 }
@@ -82,7 +82,7 @@ export function getListByPage(params) {
  * 
  */
 export function modify(params) {
-    return request('/dong-manager/calendar/modify', {
+    return request('/api/calendar/modify', {
         body: params
     });
 }
