@@ -2,7 +2,9 @@
 ====
   本项目由宇来主导，服务器也是他的，要杀要剐请联系董先生，QQ：124119241
   
-  直接链接：<http://www.yulaiz.com/dong/>
+  直接链接：<http://dong.yulaiz.com/>
+
+  后台GitHub地址：<https://github.com/YuLaiZ/dong-manager/>
 
 ### v0.2.2alpha版本说明
 
@@ -28,3 +30,6 @@
   + 增删改
 + webpck配置文件分离成dev和product
 + 服务端渲染首屏
++ 根据入口二级域名区分日志名字
+  + 董师傅的妖孽人生: dong.yulaiz.com
+  + 教主的妖孽人生: 6s.yulaiz.com
