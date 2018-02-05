@@ -1,6 +1,6 @@
 import * as rpger from '../services/app';
 import * as user from '../services/user';
-import { setAccessToken } from '../utils/system';
+import { setAccessToken, removeAccessToken } from '../utils/system';
 import initialState from './initialState/app.initialState';
 import * as calendar from '../services/calendar';
 import * as bookUpdate from '../services/bookUpdate';
@@ -53,9 +53,14 @@ export default {
             return payload
         },
         showAllAds(state, {payload}) {
-            console.log(state)
             state.loadAds += 1
             return { ...state }
+        },
+        logout(state) {
+            let accessToken = null;
+            sessionStorage.removeItem('accessToken');
+            removeAccessToken();
+            return { ...state, accessToken }
         }
     },
     effects: {

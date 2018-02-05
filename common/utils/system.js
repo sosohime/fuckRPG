@@ -10,3 +10,7 @@ export function getAccessToken() {
 export function setAccessToken(token) {
     global.accessToken = token;
 }
+
+export function removeAccessToken() {
+    global.accessToken = null;
+}

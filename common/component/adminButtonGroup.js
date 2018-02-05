@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import AddCalendar from './admin/addCalendar';
 import UpdateTJTime from './admin/updateTJTime';
 import InvitationUser from './admin/invitation';
+import Logout from './admin/logout'
 import styles from './Calendar.css';
 
 const buttonGroup = (adminProps) => {
@@ -12,6 +13,9 @@ const buttonGroup = (adminProps) => {
         ...adminProps
     }
     const updateTJTimeProps = {
+        ...adminProps
+    }
+    const logoutProps = {
         ...adminProps
     }
 
@@ -28,6 +32,7 @@ const buttonGroup = (adminProps) => {
             <Button onClick={showAds}>广告管理</Button>
             <UpdateTJTime {...updateTJTimeProps}></UpdateTJTime>
             <InvitationUser></InvitationUser>
+            <Logout {...logoutProps}></Logout>
         </div>
     )
 }
