@@ -26,6 +26,22 @@ export function invitation(params) {
   });
 }
 
+/**
+ * 查询登录状态
+ * 
+ */
+export function checkToken() {
+  return request('/api/user/checkToken')
+}
+
+/**
+ * 退出登录
+ * 
+ */
+export function logout() {
+  return request('/api/user/logout')
+}
+
 export function fetchList() {
   return request('/api/users');
 }

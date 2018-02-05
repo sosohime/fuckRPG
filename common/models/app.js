@@ -10,8 +10,11 @@ export default {
     state: initialState,
     subscriptions: {
         setup({ dispatch, history }) {
-            // return history.listen(({ pathname, query }) => {
-            // })
+            return history.listen(({ pathname, query }) => {
+                dispatch({
+                    type: 'checkToken'
+                })
+            })
         }
     },
     reducers: {
@@ -31,10 +34,16 @@ export default {
         loginSuccess(state, { payload }) {
             let accessToken = payload.data.data;
             setAccessToken(accessToken);
+            sessionStorage.setItem('accessToken', accessToken)
             return { ...state,
                 accessToken,
                 showLoginModal: false
             }
+        },
+        autoLoginSuccess(state) {
+            let accessToken = sessionStorage.getItem('accessToken');
+            setAccessToken(accessToken);
+            return { ...state, accessToken }
         },
         getBookUpdateSuccess(state, { payload }) {
             let bookUpdateDate = new Date(payload.data.replace(/-/g, '/'));
@@ -76,6 +85,14 @@ export default {
                 yield put({
                     type: 'loginError',
                     payload: data
+                })
+            }
+        },
+        * checkToken(action, { call, put }) {
+            const { data } = yield call(user.checkToken)
+            if( data.result === 'success' ) {
+                yield put({
+                    type: 'autoLoginSuccess'
                 })
             }
         }

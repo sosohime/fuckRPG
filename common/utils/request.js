@@ -27,7 +27,8 @@ function checkStatus(response) {
 }
 
 export default function request(url, options) {
-    let token = getAccessToken();
+    // let token = getAccessToken();
+    let token = getAccessToken() || sessionStorage.getItem('accessToken');
     if (token) {
         fetchDefaultOptions.headers.ACCESS_TOKEN = token;
     }

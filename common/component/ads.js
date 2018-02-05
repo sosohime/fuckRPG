@@ -198,7 +198,7 @@ class Ads extends React.Component {
         e.preventDefault();
         if(this.state.addLoading)return;
         this.props.form.validateFields((err, values) => {
-            if (Object.keys(err).length <= 1) {
+            if (!err || Object.keys(err).length <= 1) {
                 this.setState({
                     addLoading: true
                 })

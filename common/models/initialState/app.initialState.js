@@ -5,6 +5,7 @@ const initialState = {
     showLoginModal: false,
     bookUpdateDate: '',
     loadAds: 0,
+    sessionChecked: false
 }
 
 export default initialState;
