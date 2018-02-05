@@ -6,6 +6,10 @@
 
   后台GitHub地址：<https://github.com/YuLaiZ/dong-manager/>
 
+### v0.3alpha版本说明
+
+- sessionStorage级自动登录
+
 ### v0.2.3alpha版本说明
 
 - 新增广告增删改功能
