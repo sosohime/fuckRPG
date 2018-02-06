@@ -35,6 +35,7 @@ class addCalendar extends React.Component{
                 this.setState({
                     loading: true
                 })
+                values.days += ' 00:00:00'
                 calendarApi.add(values)
                     .then((res) => {
                         let { data } = res;

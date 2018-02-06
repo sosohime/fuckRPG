@@ -29,12 +29,12 @@ export function strToMD5UpperCase(str) {
     return md5UpperCase;
 }
 
-export function datePattern (date = '' , fmt) {
-    let thisDate = new Date() 
+export function datePattern (date , fmt) {
+    let thisDate = new Date(date.replace(/-/g, '/'))
     let o = {
-    "M+" : thisDate.getMonth()+1, //月份
+    "M+" : thisDate.getMonth() + 1, //月份
     "d+" : thisDate.getDate(), //日
-    "h+" : thisDate.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时
+    "h+" : thisDate.getHours() % 12 == 0 ? 12 : thisDate.getHours() % 12, //小时
     "H+" : thisDate.getHours(), //小时
     "m+" : thisDate.getMinutes(), //分
     "s+" : thisDate.getSeconds(), //秒

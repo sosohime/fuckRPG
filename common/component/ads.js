@@ -45,6 +45,9 @@ class Ads extends React.Component {
                 for(let i = 0; i < 3 && i < adsList.length; i++){
                     let { title, description, id } = adsList[i];
                     let args = {
+                        style: {
+                            zIndex: 990
+                        },
                         message: title,
                         description: (
                             <div>

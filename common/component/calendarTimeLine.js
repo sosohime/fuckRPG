@@ -1,6 +1,7 @@
 import React from 'react';
 import { Popover, Timeline, Button, Modal, Form, Input, message } from 'antd';
 import * as calendarApi from '../services/calendar';
+import { datePattern } from '../utils/tools';
 import styles from './Calendar.css';
 
 const FormItem = Form.Item;
@@ -84,6 +85,7 @@ class CalendarTimeLine extends React.Component {
                 this.setState({
                     editLoading: true
                 })
+                values.days += ' 00:00:00'
                 calendarApi.modify(values)
                     .then((res) => {
                         let { data } = res;
@@ -181,30 +183,33 @@ class CalendarTimeLine extends React.Component {
         return (
             <Timeline style={{ width: 400, padding: '28px 60px', marginLeft: '44px' }}>
                 {
-                    rili.map((item, i) => 
-                        <Timeline.Item key={i} id={`Timeline-${item.day}`}>
-                            <label>
-                                第 <em style={{ color: '#108ee9' }}>{item.id}</em> 天
-                            </label>
-                            <p style={{ padding: '0 0 0 20px' }}>- {item.title}</p>
-                            <Popover 
-                                placement="right" 
-                                content={<div dangerouslySetInnerHTML={{__html: item.description}}></div>}
-                                title={`第 ${item.id} 天`} 
-                                trigger="hover"
-                                >
-                                <p style={{textAlign: 'right'}}>
-                                    <Button>> 详情</Button>
-                                </p>
-                            </Popover>
-                            { admin ?
-                                <div className={styles.timelineAdmin}>
-                                    <Button onClick={() => this.handleDelete(item.id)}>删除</Button>
-                                    <Button onClick={() => this.showEditModal(item)}>编辑</Button>
-                                </div> : null
-                            }
-                        </Timeline.Item>
-                        )
+                    rili.map((item, i) => {
+                            let date = datePattern(item.days, 'yyyy年MM月dd日')
+                            return (
+                                <Timeline.Item key={i} id={`Timeline-${item.day}`}>
+                                    <label>
+                                        <em style={{ color: '#108ee9' }}>{date}</em> 
+                                    </label>
+                                    <p style={{ padding: '0 0 0 20px' }}>- {item.title}</p>
+                                    <Popover 
+                                        placement="right" 
+                                        content={<div dangerouslySetInnerHTML={{__html: item.description}}></div>}
+                                        title={date} 
+                                        trigger="hover"
+                                        >
+                                        <p style={{textAlign: 'right'}}>
+                                            <Button>> 详情</Button>
+                                        </p>
+                                    </Popover>
+                                    { admin ?
+                                        <div className={styles.timelineAdmin}>
+                                            <Button onClick={() => this.handleDelete(item.id)}>删除</Button>
+                                            <Button onClick={() => this.showEditModal(item)}>编辑</Button>
+                                        </div> : null
+                                    }
+                                </Timeline.Item>
+                            )
+                        })
                 }
                 {this.confirmDelete()}
                 {this.modifyCalendar()}
