@@ -17,6 +17,7 @@ class CalendarTimeLine extends React.Component {
             showEditModal: false,
             editItem: {},
             editLoading: false,
+            deleteDate: null,
         }
     }
 
@@ -57,7 +58,7 @@ class CalendarTimeLine extends React.Component {
                 onCancel={this.hideDeleteModal.bind(this)}
                 footer={null}
             >
-                不可逆操作，是否确认删除第 {this.state.deleteId} 天？
+                不可逆操作，是否确认删除第 {this.state.deleteDate} 天？
                 <div style={{paddingTop: '40px'}}>
                     <Button
                         type="primary" 
@@ -162,10 +163,11 @@ class CalendarTimeLine extends React.Component {
         )
     }
 
-    handleDelete(id) {
+    handleDelete(id, date) {
         this.setState({
             showDeleteModal: true,
-            deleteId: id
+            deleteId: id,
+            deleteDate: date
         })
     }
 
@@ -203,7 +205,7 @@ class CalendarTimeLine extends React.Component {
                                     </Popover>
                                     { admin ?
                                         <div className={styles.timelineAdmin}>
-                                            <Button onClick={() => this.handleDelete(item.id)}>删除</Button>
+                                            <Button onClick={() => this.handleDelete(item.id, date)}>删除</Button>
                                             <Button onClick={() => this.showEditModal(item)}>编辑</Button>
                                         </div> : null
                                     }
