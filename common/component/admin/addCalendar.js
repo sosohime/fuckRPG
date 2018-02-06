@@ -74,7 +74,7 @@ class addCalendar extends React.Component{
                             {getFieldDecorator('days', {
                                 rules: [{ required: true, message: '输入天数！' }],
                             })(
-                            <Input placeholder="天数(不能重复，地王还没做查重)" />
+                            <Input placeholder="天数(YYYY-mm-dd)" />
                         )}
                         </FormItem>
                         <FormItem>

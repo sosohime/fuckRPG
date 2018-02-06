@@ -58,7 +58,7 @@ class CalendarTimeLine extends React.Component {
                 onCancel={this.hideDeleteModal.bind(this)}
                 footer={null}
             >
-                不可逆操作，是否确认删除第 {this.state.deleteDate} 天？
+                不可逆操作，是否确认删除 {this.state.deleteDate} ？
                 <div style={{paddingTop: '40px'}}>
                     <Button
                         type="primary" 
@@ -131,7 +131,7 @@ class CalendarTimeLine extends React.Component {
                         {getFieldDecorator('days', {
                             rules: [{ required: true, message: '输入天数！' }],
                         })(
-                        <Input placeholder="天数" />
+                        <Input placeholder="天数(YYYY-mm-dd)" />
                     )}
                     </FormItem>
                     <FormItem>
