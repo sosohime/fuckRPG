@@ -34,6 +34,11 @@ function renderFullPage(html, initialState = '') {
       <title>董师傅的妖孽人生</title>
       <meta charset="utf-8" />
       <link rel="stylesheet" href="/static/index.css" />
+      <style>
+        body .ant-notification{
+          z-index: 990;
+        }
+      </style>
     </head>
     <body>
       <div id="root">
