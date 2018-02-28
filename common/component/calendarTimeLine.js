@@ -143,7 +143,7 @@ class CalendarTimeLine extends React.Component {
                     </FormItem>
                     <FormItem>
                         {getFieldDecorator('remark', {
-                            rules: [{ required: true, message: '输入备注！' }],
+                            rules: [{ required: false, message: '输入备注！' }],
                         })(
                         <Input placeholder="备注" />
                     )}
